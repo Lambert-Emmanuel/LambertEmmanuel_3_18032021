@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&family=Shrikhand&display=swap");
-body, html {
+body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -103,7 +103,6 @@ body, html {
 
 .commander {
   width: 150px;
-  position: relative;
   margin-top: 30px;
   position: absolute;
   display: flex;
@@ -118,6 +117,7 @@ body, html {
   color: black;
   position: relative;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 @keyframes fadeAndScale {
@@ -145,26 +145,39 @@ body, html {
   position: relative;
 }
 
-.confirmation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 0px;
-  height: 79px;
-  top: 0px;
-  right: 0px;
-  color: white;
-  border-radius: 0px 20px 20px 0px;
-  background-color: #99e2d0;
-  position: absolute;
+.selection:hover .fa-check-circle {
+  -webkit-transform: rotate(0);
+  transition: 0.9s ease-in;
+}
+.selection:hover .confirmation {
+  filter: opacity(1);
+  width: 60px;
+  transition: 0.7s ease-in;
+  visibility: visible;
+}
+.selection:hover .prix {
+  -webkit-transform: translateX(-18%);
+  transition: 0.7s ease-in;
 }
 
-.selection:active .prix {
-  margin-right: 60px;
+.fa-check-circle {
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+  color: white;
 }
-.selection:active .confirmation {
-  transition: 1s ease-in;
-  width: 60px;
+
+.confirmation {
+  height: 79px;
+  width: 0px;
+  background-color: #99e2d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 20px 20px 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  visibility: hidden;
 }
 
 .entrées {
@@ -291,8 +304,8 @@ figcaption {
   width: 20px;
   border-radius: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   color: #fff;
   position: absolute;
   left: -10px;
@@ -390,21 +403,11 @@ footer span {
     flex-direction: column;
   }
 
-  .reservez-bouton:active {
-    filter: brightness(110%);
-    box-shadow: 4px 4px 10px #7e7e7e;
-  }
-
   .cartes img {
     height: 180px;
     width: 300px;
     border-radius: 15px 15px 0px 0px;
     object-fit: cover;
-  }
-
-  .coeur:active, .coeur2:active {
-    filter: opacity(100);
-    color: #969696;
   }
 
   .menu {

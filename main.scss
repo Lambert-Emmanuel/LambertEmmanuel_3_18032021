@@ -6,8 +6,17 @@ $font:  Shrikhand, "cursive";
 
 $purple:  #9356dc;
 
+$green: #99e2d0;
+
+@mixin flex-center{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&family=Shrikhand&display=swap");
-body,html {
+
+body{
   padding: 0;
   margin: 0;	
   font-family: Roboto, sans-serif;
@@ -55,11 +64,7 @@ body,html {
         border-bottom-color: #ff79da;
         animation: spinnerTwo 1.2s linear infinite;
     }
-
-  
 }
-
-
 
 .logo {
   font-family:$font;
@@ -68,7 +73,6 @@ body,html {
   margin: 0;
   padding: 0;
 }
-
 /* menu*/
 .titre {
   font-family: $font;
@@ -95,14 +99,13 @@ body,html {
 .barre {
   height: 3px;
   width: 45px;
-  background-color: #99e2d0;
+  background-color: $green;
   position: relative;
   margin-top: -15px;
 }
 
 .commander {
   width: 150px;
-  position: relative;
   margin-top: 30px;
   position:absolute;
   display: flex;
@@ -117,6 +120,7 @@ body,html {
   color: black;
   position: relative;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 @keyframes fadeAndScale {
@@ -133,6 +137,7 @@ body,html {
     transform: scale3d(1, 1, 1);
   }
 }
+
 .selection h4, .selection p {
   font-size: 15px;
   margin-left: 10px;
@@ -144,31 +149,43 @@ body,html {
   position: relative;
  }
 
+.selection:hover { 
+
+	.fa-check-circle {
+    -webkit-transform: rotate(0);
+    transition: 0.9s ease-in; 
+    }
+     
+    .confirmation{
+    filter: opacity(1);
+    width: 60px;
+    transition: 0.7s ease-in;
+    visibility: visible;
+    } 
+    .prix{
+	-webkit-transform: translateX(-18%);
+	transition: 0.7s ease-in; 
+    }
+}    
+
+.fa-check-circle{
+	transform: rotate(180deg);
+    transition-duration: .5s;
+    color: white;
+}
+
 .confirmation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 0px;
-  height: 79px;
-  top: 0px;
-  right: 0px;
-  color: white;
-  border-radius: 0px 20px 20px 0px;
-  background-color: #99e2d0;
-  position: absolute;
+    height: 79px;
+    width: 0px;
+    background-color: $green;
+    @include flex-center;
+    border-radius: 0px 20px 20px 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    visibility: hidden;
 }
 
-.selection:active{
- 
- .prix{ 
- 	margin-right: 60px;
-}
- .confirmation{
-    transition: 1s ease-in;  
- 	width: 60px;
-}
-
-}
 
 .entrées {
   animation: fadeAndScale 0.6s;
@@ -192,7 +209,6 @@ body,html {
 footer {
   margin-top: 50px;
 }
-
 /*menu*/
 .bouton, .commander {
   border: 0 none;
@@ -206,11 +222,13 @@ footer {
   cursor: pointer;
   box-shadow: $shadow;
 }
+
 .reservez a{
 	position:absolute;
 	margin-left: -100px;
 	margin-top: 10px;
 }
+
 .bouton:hover {
   filter: brightness(110%);
   box-shadow: 4px 4px 10px #7e7e7e;
@@ -294,13 +312,12 @@ figcaption {
   height: 20px;
   width: 20px;
   border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   color: #fff;
   position: absolute;
   left: -10px;
 }
+
 .étapes-1:before {
   counter-increment: compteListe 1;
 }
@@ -345,7 +362,7 @@ figcaption {
 }
 
 .cartes span {
-  background-color: #99e2d0;
+  background-color: $green;
   position: absolute;
   color: #1b6150;
   padding: 5px;
@@ -392,22 +409,12 @@ footer span {
     display: flex;
     flex-direction: column;
 }
-
- .reservez-bouton:active {
-  filter: brightness(110%);
-  box-shadow: 4px 4px 10px #7e7e7e;
-}
-
+  
   .cartes img {
     height: 180px;
     width: 300px;
     border-radius: 15px 15px 0px 0px;
     object-fit: cover;
-  }
-
-  .coeur:active, .coeur2:active {
-    filter: opacity(100);
-    color: #969696;
   }
 
   .menu {
