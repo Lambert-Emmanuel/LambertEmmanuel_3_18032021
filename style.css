@@ -71,6 +71,15 @@ body {
 }
 
 /* menu*/
+.fa-arrow-left {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  transform: translate(50%, 50%);
+  color: black;
+}
+
 .titre {
   font-family: Shrikhand, "cursive";
   padding-left: 20px;
@@ -120,29 +129,9 @@ body {
   overflow: hidden;
 }
 
-@keyframes fadeAndScale {
-  0% {
-    opacity: 0;
-    transform: scale3d(0.75, 0.75, 1);
-  }
-  40% {
-    opacity: 0;
-    transform: scale3d(0.75, 0.75, 1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-  }
-}
 .selection h4, .selection p {
   font-size: 15px;
   margin-left: 10px;
-}
-
-.prix {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
 }
 
 .selection:hover .fa-check-circle {
@@ -159,11 +148,24 @@ body {
   -webkit-transform: translateX(-18%);
   transition: 0.7s ease-in;
 }
+.selection:hover p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 250px;
+  transition: 0.7s ease-in;
+}
 
 .fa-check-circle {
   transform: rotate(180deg);
   transition-duration: 0.5s;
   color: white;
+}
+
+.prix {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .confirmation {
@@ -180,6 +182,20 @@ body {
   visibility: hidden;
 }
 
+@keyframes fadeAndScale {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  40% {
+    opacity: 0;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
 .entrées {
   animation: fadeAndScale 0.6s;
   animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
