@@ -32,19 +32,19 @@ body{
 }
 
 
-@keyframes spinnerOne {
-  0% {transform: rotate(0deg); border-width: 10px;}
-  50% {transform: rotate(180deg); border-width: 1px;}
-  100% {transform: rotate(360deg); border-width: 10px;}
+@-webkit-keyframes spinnerOne {
+  0% {-webkit-transform: rotate(0deg); border-width: 10px;}
+  50% {-webkit-transform: rotate(180deg); border-width: 1px;}
+  100% {-webkit-transform: rotate(360deg); border-width: 10px;}
 }
 
-@keyframes spinnerTwo {
-  0% {transform: rotate(0deg); border-width: 1px;}
-  50% {transform: rotate(180deg); border-width: 10px;}
-  100% {transform: rotate(360deg); border-width: 1px;}
+@-webkit-keyframes spinnerTwo {
+  0% {-webkit-transform: rotate(0deg); border-width: 1px;}
+  50% {-webkit-transform: rotate(180deg); border-width: 10px;}
+  100% {-webkit-transform: rotate(360deg); border-width: 1px;}
 }
 
-@keyframes transitionIn {
+@-webkit-keyframes transitionIn {
 	0%{
 		opacity: 1;
 	}
@@ -64,7 +64,7 @@ body{
   max-height: 100%;
   max-width: 100%;
   z-index:  10000;
-  animation: transitionIn 3s ease-out;
+  -webkit-animation: transitionIn 3s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -75,7 +75,7 @@ body{
 .fa-cocktail{
 	position: absolute;
 	color: $lite;
-	transform: translate(50px, 50px);
+	-webkit-transform: translate(50px, 50px);
 }
 
 .spinner{
@@ -96,13 +96,13 @@ body{
 		border: 8px solid transparent;
 		border-top-color: $purple;
 		border-radius: 50%;
-		animation: spinnerOne 1.2s linear infinite;
+		-webkit-animation: spinnerOne 1.2s linear infinite;
     }
  
     div:nth-child(2){
         border: 8px solid transparent;
         border-bottom-color: #ff79da;
-        animation: spinnerTwo 1.2s linear infinite;
+        -webkit-animation: spinnerTwo 1.2s linear infinite;
     }
 }
 
@@ -117,8 +117,8 @@ body{
 
 .bloc-page
 {
-  animation: fadeAndScale 2s;
-  animation-timing-function: $bezier ease-in;
+  -webkit-animation: fadeAndScale 3s;
+  -webkit-animation-timing-function: $bezier ease-in-out;
 }
 
 /* menu*/
@@ -127,7 +127,7 @@ body{
     height: 30px;
     width: 30px;
     font-size: 18px;
-    transform: translate(50%, 50%);
+    -webkit-transform: translate(50%, 50%);
     color: black;
 }
 
@@ -167,7 +167,7 @@ body{
   position:absolute;
   display: flex;
   justify-content: center;
-  transform: translate(700%, 0%);
+  -webkit-transform: translate(700%, 0%);
 }
 
 .selection {
@@ -190,23 +190,23 @@ body{
 
 	.fa-check-circle {
     -webkit-transform: rotate(0);
-    transition: 0.9s ease-in; 
+    transition: 0.9s ease-in-out; 
     }
      
     .confirmation {
     filter: opacity(1);
     width: 120px;
-    transition: 0.7s ease-in;
+    transition: 0.7s ease-in-out;
     visibility: visible;
     } 
     .prix {
 	-webkit-transform: translateX(-150px);
-	transition: 0.7s ease-in; 
+	transition: 0.7s ease-in-out; 
     }
 }    
 
 .fa-check-circle{
-	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
     transition-duration: .5s;
     color: white;
     font-size: 30px;
@@ -232,34 +232,34 @@ body{
     visibility: hidden;
 }
 
-@keyframes fadeAndScale {
+@-webkit-keyframes fadeAndScale {
   0% {
     opacity: 0;
-    transform: scale3d(0.75, 0.75, 1);
+    -webkit-transform: scale3d(0.75, 0.75, 1);
   }
   40% {
     opacity: 0;
-    transform: scale3d(0.75, 0.75, 1);
+    -webkit-transform: scale3d(0.75, 0.75, 1);
   }
   100% {
     opacity: 1;
-    transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
   }
 }
 
 .entrées {
-  animation: fadeAndScale 0.6s;
-  animation-timing-function: $bezier;
+  -webkit-animation: fadeAndScale 0.6s;
+  -webkit-animation-timing-function: $bezier;
 }
 
 .plats {
-  animation: fadeAndScale 0.9s;
-  animation-timing-function: $bezier;
+  -webkit-animation: fadeAndScale 0.9s;
+  -webkit-animation-timing-function: $bezier;
 }
 
 .désserts {
-  animation: fadeAndScale 1s;
-  animation-timing-function: $bezier;
+  -webkit-animation: fadeAndScale 1s;
+  -webkit-animation-timing-function: $bezier;
 }
 
 .haut {
@@ -314,6 +314,9 @@ footer {
 
 .coeur, .coeur2 {
   filter: opacity(0);
+  background: -webkit-linear-gradient(top, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .coeur:hover, .coeur2:hover {
@@ -479,7 +482,7 @@ footer span {
 
   .cartes a
   {
-  	transform: translateX(-5%);
+  	-webkit-transform: translateX(-5%);
   }
 
   .menu {
@@ -508,7 +511,7 @@ footer span {
     white-space: nowrap;
     overflow: hidden;
     width: 250px;
-    transition: 0.7s ease-in;
+    transition: 0.7s ease-in-out;
     }
 
   }
@@ -522,7 +525,7 @@ footer span {
   }
 
   .commander {
-    transform: translate(50%, 50%);
+    -webkit-transform: translate(50%, 50%);
   }
   
   footer{
