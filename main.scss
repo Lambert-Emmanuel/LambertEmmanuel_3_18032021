@@ -8,6 +8,12 @@ $purple:  #9356dc;
 
 $lite: #99e2d0;
 
+@mixin footer{
+	footer{
+  	margin-top: 150px;
+  }
+}
+
 @mixin flex-center{
 	display: flex;
     align-items: center;
@@ -167,7 +173,7 @@ body{
   position:absolute;
   display: flex;
   justify-content: center;
-  -webkit-transform: translate(700%, 0%);
+  -webkit-transform: translate(500%, 0%);
 }
 
 .selection {
@@ -225,7 +231,7 @@ body{
     width: 0px;
     background-color: $lite;
     @include flex-center;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 10px 10px 0px;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -283,10 +289,12 @@ footer {
   box-shadow: $shadow;
 }
 
-.reservez a{
-	position:absolute;
-	margin-left: -100px;
-	margin-top: 10px;
+.bouton{
+  margin-top: 10px;
+}
+
+section{
+	overflow: hidden;
 }
 
 .bouton:hover, .commander:hover {
@@ -321,7 +329,6 @@ footer {
 
 .coeur:hover, .coeur2:hover {
   filter: opacity(100);
-  color:$purple;
 }
 
 .choisir {
@@ -344,7 +351,7 @@ a {
   justify-content: center;
   align-items:center;
 
-  span{
+  .paris{
   	margin-left: 5px;
   } 
 }  
@@ -525,11 +532,49 @@ footer span {
   }
 
   .commander {
-    -webkit-transform: translate(50%, 50%);
+    -webkit-transform: translate(70%, 50%);
   }
   
-  footer{
-  	margin-top: 150px;
-  }
+  @include footer;
+}
+
+@media screen and (min-width: 650px) and (max-width: 768px){
+	.cartes{
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.cartes img{
+		width: 300px;
+		height: 200px;
+	}
+
+	.commander{
+		-webkit-transform: translate(210%, 50%);
+	}
+
+	.fa-arrow-left{
+		font-size: 25px;
+	}
+
+	@include footer;
+}
+
+@media screen and (min-width: 780px) and (max-width: 1024px){
+	.cartes img{
+		width: 400px;
+		height: 250px;
+	}
+
+	.commander{
+		-webkit-transform: translate(310%, 50%);
+	}
+
+	.fa-arrow-left{
+		font-size: 25px;
+	}
+
+	@include footer;
+
 }
 
