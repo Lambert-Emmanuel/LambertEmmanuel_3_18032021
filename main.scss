@@ -487,9 +487,10 @@ footer span {
     object-fit: cover;
   }
 
-  .cartes a
-  {
-  	-webkit-transform: translateX(-5%);
+
+  .cartes{
+  	display: flex;
+    justify-content:  center;
   }
 
   .menu {
@@ -510,7 +511,7 @@ footer span {
     }
 
     .prix {
-	-webkit-transform: translateX(-50px);
+	-webkit-transform: translateX(-60px);
     }
 
     p {
@@ -521,6 +522,14 @@ footer span {
     transition: 0.7s ease-in-out;
     }
 
+  }
+
+  .entrées, .plats, .désserts{
+  	padding: 8px;
+  }
+
+  .prix{
+  	right: 5px;
   }
 
   .fa-check-circle{

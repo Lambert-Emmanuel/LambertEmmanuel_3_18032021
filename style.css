@@ -469,8 +469,9 @@ footer span {
     object-fit: cover;
   }
 
-  .cartes a {
-    -webkit-transform: translateX(-5%);
+  .cartes {
+    display: flex;
+    justify-content: center;
   }
 
   .menu {
@@ -489,7 +490,7 @@ footer span {
     width: 60px;
   }
   .selection:hover .prix {
-    -webkit-transform: translateX(-50px);
+    -webkit-transform: translateX(-60px);
   }
   .selection:hover p {
     text-overflow: ellipsis;
@@ -497,6 +498,14 @@ footer span {
     overflow: hidden;
     width: 250px;
     transition: 0.7s ease-in-out;
+  }
+
+  .entrées, .plats, .désserts {
+    padding: 8px;
+  }
+
+  .prix {
+    right: 5px;
   }
 
   .fa-check-circle {
